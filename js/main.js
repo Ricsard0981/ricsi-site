@@ -133,7 +133,9 @@
     }
 
     const latest = await getJSON("data/latest.json").catch(() => ({ videos: [] }));
-    const vids = latest.videos || [];
+    const all = latest.videos || [];
+    const vids = all.filter((v) => !v.live);
+    const lastStream = all.find((v) => v.live);
 
     // home: latest video
     const yt = $("#yt-slot");
@@ -171,6 +173,14 @@
       grid.innerHTML = vids.length
         ? vids.map((v) => `<article class="win dark rv"><div class="win-bar"><span class="win-title">${esc(v.title)}</span></div><div class="win-body"><a class="card-thumb" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener" style="background-image:url(${ytThumb(v.id)})" aria-label="${esc(v.title)}"></a><div class="vid-meta" style="color:#9aa4b8">${fmtDate(v.published)}</div></div></article>`).join("")
         : `<div class="win rv"><div class="win-bar"><span class="win-title">Empty chest</span></div><div class="win-body"><p>Videos appear once <code>data/config.json</code> has your YouTube channel ID and the update workflow has run.</p></div></div>`;
+    }
+
+    // streams: only the latest one
+    const sg = $("#stream-grid");
+    if (sg) {
+      sg.innerHTML = lastStream
+        ? `<article class="win dark rv"><div class="win-bar alt"><span class="win-title">🔴 Latest stream</span></div><div class="win-body"><a class="card-thumb" href="https://www.youtube.com/watch?v=${lastStream.id}" target="_blank" rel="noopener" style="background-image:url(${ytThumb(lastStream.id)})" aria-label="${esc(lastStream.title)}"></a><div class="vid-title" style="color:#fff">${esc(lastStream.title)}</div><div class="vid-meta" style="color:#9aa4b8">${fmtDate(lastStream.published)}</div></div></article>`
+        : `<div class="win rv"><div class="win-bar alt"><span class="win-title">No streams yet</span></div><div class="win-body"><p>No streams yet. Check back soon.</p></div></div>`;
     }
 
     // projects page

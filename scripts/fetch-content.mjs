@@ -19,6 +19,14 @@ const videos = [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)].slice(0, 12).map
   published: /<published>([^<]+)</.exec(e)?.[1],
 })).filter((v) => v.id);
 
+// The RSS feed mixes uploads and past live streams; the watch page says which is which.
+await Promise.all(videos.map(async (v) => {
+  try {
+    const page = await (await fetch(`https://www.youtube.com/watch?v=${v.id}`, { headers: { "User-Agent": "Mozilla/5.0", Cookie: "CONSENT=YES+1" } })).text();
+    v.live = /"isLiveContent":true/.test(page);
+  } catch { v.live = false; }
+}));
+
 const next = { updated: new Date().toISOString(), videos };
 const prev = JSON.parse(await readFile("data/latest.json", "utf8").catch(() => "{}"));
 if (JSON.stringify(prev.videos) === JSON.stringify(videos)) { console.log("No change."); process.exit(0); }
