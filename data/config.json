@@ -1,6 +1,6 @@
 {
   "name": "Ricsi",
-  "tagline": ["YouTuber.", "Programmer.", "Builder of blocky things.", "Making it look easy."],
+  "tagline": ["YouTube Creator.", "Video Editor.", "Developer.", "Music Producer.", "Digital Creator."],
   "youtube": { "handle": "YOUR_HANDLE", "channelId": "YOUR_CHANNEL_ID", "url": "https://www.youtube.com/@YOUR_HANDLE" },
   "instagram": { "username": "YOUR_INSTAGRAM", "url": "https://www.instagram.com/YOUR_INSTAGRAM/" },
   "discord": { "invite": "https://discord.gg/YOUR_INVITE", "guildId": "" },

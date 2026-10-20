@@ -1,5 +1,9 @@
 [
-  { "title": "Project One", "desc": "Short description of something you built.", "tags": ["JavaScript", "Web"], "url": "#" },
-  { "title": "Project Two", "desc": "Another cool thing. Replace me in data/projects.json.", "tags": ["Python"], "url": "#" },
-  { "title": "Minecraft Plugin", "desc": "A server plugin or mod, if you have one.", "tags": ["Java", "Minecraft"], "url": "#" }
+  { "title": "RICSI", "desc": "My personal creator archive, bringing my different creative projects together. You're looking at it.", "tags": ["Portfolio", "HTML", "CSS", "JavaScript"], "url": "https://github.com/Ricsard0981/ricsi-site" },
+  { "title": "What Remains", "desc": "An unofficial, spoiler-aware interactive archive exploring The Last of Us universe.", "tags": ["Web development", "Research", "Interactive design", "QA"], "url": "#" },
+  { "title": "PS1_LUNA", "desc": "A PS1-inspired horror game prototype developed with Godot.", "tags": ["Godot", "Horror", "Game dev", "Retro graphics"], "url": "#" },
+  { "title": "Old Save", "desc": "A Minecraft horror mod built around silent relics, strange structures and unsettling altered worlds.", "tags": ["Minecraft", "Modding", "Horror", "World generation"], "url": "#" },
+  { "title": "SoulPlugin", "desc": "A Minecraft plugin concept built around ghosts, dropped souls, revival and social consequences.", "tags": ["Minecraft", "Plugins", "Multiplayer", "Game mechanics"], "url": "#" },
+  { "title": "TLOU2 Optimization Toolkit", "desc": "Experiments and tools for investigating performance and stuttering in The Last of Us Part II on PCs with slower storage.", "tags": ["Windows", "Performance analysis", "PC optimization"], "url": "#" },
+  { "title": "rix.off. — DAGÁLY", "desc": "My independent music project exploring hyperpop, vocal processing and electronic production.", "tags": ["Music", "Hyperpop", "FL Studio", "Production"], "url": "#" }
 ]
