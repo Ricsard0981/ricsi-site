@@ -1,10 +1,10 @@
 {
   "name": "Ricsi",
   "tagline": ["YouTube Creator.", "Video Editor.", "Developer.", "Music Producer.", "Digital Creator."],
-  "youtube": { "handle": "YOUR_HANDLE", "channelId": "YOUR_CHANNEL_ID", "url": "https://www.youtube.com/@YOUR_HANDLE" },
-  "instagram": { "username": "YOUR_INSTAGRAM", "url": "https://www.instagram.com/YOUR_INSTAGRAM/" },
-  "discord": { "invite": "https://discord.gg/YOUR_INVITE", "guildId": "" },
-  "github": { "username": "YOUR_GITHUB", "url": "https://github.com/YOUR_GITHUB" },
+  "youtube": { "handle": "ricsidatboii", "channelId": "UCF4WCW10lvq-kQ0OcYXsRVg", "url": "https://www.youtube.com/@ricsidatboii" },
+  "instagram": { "username": "", "url": "", "comingSoon": true },
+  "discord": { "invite": "", "guildId": "", "username": "ricsi0981" },
+  "github": { "username": "Ricsard0981", "url": "https://github.com/Ricsard0981" },
   "tiktok": { "url": "" },
   "twitter": { "url": "" },
   "email": ""

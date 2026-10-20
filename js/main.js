@@ -107,7 +107,17 @@
     const isSet = (v) => v && !String(v).includes("YOUR_");
     $$(".cfg-name").forEach((n) => (n.textContent = cfg.name || "Ricsi"));
     const links = { youtube: cfg.youtube?.url, instagram: cfg.instagram?.url, discord: cfg.discord?.invite, github: cfg.github?.url, tiktok: cfg.tiktok?.url, twitter: cfg.twitter?.url };
-    $$("[data-social]").forEach((a) => { const u = links[a.dataset.social]; if (isSet(u)) { a.href = u; a.target = "_blank"; a.rel = "noopener"; } });
+    $$("[data-social]").forEach((a) => {
+      const k = a.dataset.social, u = links[k];
+      if (isSet(u)) { a.href = u; a.target = "_blank"; a.rel = "noopener"; return; }
+      if (k === "tiktok" || k === "twitter") return a.remove();
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (k === "discord" && cfg.discord?.username) { safe(() => navigator.clipboard.writeText(cfg.discord.username)); toast("Discord: " + cfg.discord.username + " (copied)"); }
+        else toast("Coming soon!");
+      });
+      if (!(k === "discord" && cfg.discord?.username)) a.classList.add("is-soon");
+    });
 
     // taglines
     const tag = $("#tagline");
@@ -141,14 +151,17 @@
       const d = await getJSON("data/instagram.json").catch(() => ({}));
       const m = /instagram\.com\/(?:p|reel)\/([\w-]+)/.exec(d.postUrl || "");
       if (m) { ig.innerHTML = `<iframe class="ig-embed" loading="lazy" title="Latest Instagram post" src="https://www.instagram.com/p/${m[1]}/embed"></iframe>`; }
-      else ig.innerHTML = `<div class="fallback-card"><div class="px" style="font-size:1.4rem">📸 @${esc(cfg.instagram?.username || "instagram")}</div><p>Follow along for behind-the-scenes and daily posts.</p><a class="btn pink" href="${esc(isSet(links.instagram) ? links.instagram : "#")}" target="_blank" rel="noopener">Open Instagram</a></div>`;
+      else if (cfg.instagram?.comingSoon || !isSet(links.instagram)) ig.innerHTML = `<div class="fallback-card"><div class="px" style="font-size:1.6rem">📸 Instagram</div><div class="soon">COMING SOON</div><p>Behind-the-scenes posts are on the way.</p></div>`;
+      else ig.innerHTML = `<div class="fallback-card"><div class="px" style="font-size:1.4rem">📸 @${esc(cfg.instagram.username)}</div><p>Follow along for behind-the-scenes and daily posts.</p><a class="btn pink" href="${esc(links.instagram)}" target="_blank" rel="noopener">Open Instagram</a></div>`;
     }
 
     // home: discord
     const dc = $("#dc-slot");
     if (dc) {
-      const inv = isSet(links.discord) ? links.discord : "#";
-      dc.innerHTML = `<div class="dc-box"><div class="dc-logo">D</div><div><div class="px" style="font-size:1.4rem">Join the Discord</div><span class="online" id="dc-on">community hub</span></div></div><p style="margin-top:14px">Hang out, get updates, and talk with the community.</p><a class="btn go" href="${esc(inv)}" target="_blank" rel="noopener">Join server</a>`;
+      const user = cfg.discord?.username || "";
+      if (isSet(links.discord)) dc.innerHTML = `<div class="dc-box"><div class="dc-logo">D</div><div><div class="px" style="font-size:1.4rem">Join the Discord</div><span class="online" id="dc-on">community hub</span></div></div><p style="margin-top:14px">Hang out, get updates, and talk with the community.</p><a class="btn go" href="${esc(links.discord)}" target="_blank" rel="noopener">Join server</a>`;
+      else dc.innerHTML = `<div class="dc-box"><div class="dc-logo">D</div><div><div class="px" style="font-size:1.4rem">Discord</div><div class="soon">SERVER COMING SOON</div></div></div><p style="margin-top:14px">My server isn't open yet. Until then, add me directly:</p><button class="btn go" id="dc-copy" type="button">@${esc(user)} · copy</button>`;
+      $("#dc-copy")?.addEventListener("click", () => { safe(() => navigator.clipboard.writeText(user)); toast("Copied Discord username: " + user); });
       if (cfg.discord?.guildId) getJSON(`https://discord.com/api/guilds/${cfg.discord.guildId}/widget.json`).then((w) => { $("#dc-on").textContent = `${w.presence_count} online · ${w.name}`; }).catch(() => {});
     }
 
