@@ -1,7 +1,8 @@
+/* avoid-ai-design-ignore-file: C6 (holographic Y2K text is part of the brief) */
 /* ============ TOKENS ============ */
 :root {
-  --bg: #07090f;
-  --bg-2: #0d1220;
+  --bg: #0b4447;
+  --bg-2: #0f5559;
   --teal: #0aa6a0;
   --chrome-1: #f4f7fb;
   --chrome-2: #c6cdd8;
@@ -9,7 +10,7 @@
   --chrome-4: #5a6375;
   --ink: #0b0f1a;
   --text: #e8ecf5;
-  --muted: #9aa4b8;
+  --muted: #b9c6d8;
   --pink: #ff4fd8;
   --cyan: #3df0ff;
   --lime: #8dff4f;
@@ -19,7 +20,7 @@
   --purple: #2a0a4a;
   --font-px: "Pixelify Sans", "Silkscreen", monospace;
   --font-px2: "Silkscreen", monospace;
-  --font-body: "Inter", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --px: 4px;
   --gap: clamp(16px, 2.4vw, 32px);
@@ -110,7 +111,7 @@ p { margin: 0 0 1em; }
   color: #fff; font-family: var(--font-px); font-size: 1rem;
   user-select: none; touch-action: none;
 }
-.win-bar.alt { background: linear-gradient(90deg, #3a0a5a, #c02ac0 55%, #ff9be8); }
+.win-bar.alt { background: linear-gradient(90deg, #5a0a2a, #d6336c 60%, #ff9bb8); }
 .win-bar.grass { background: linear-gradient(90deg, #2a5a1a, #5fb546 60%, #b6ff6b); }
 .win-title { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .win-ico { width: 18px; height: 18px; image-rendering: pixelated; }
@@ -151,12 +152,12 @@ p { margin: 0 0 1em; }
   text-shadow: 2px 2px 0 #333; cursor: pointer;
   transition: transform .12s, background .12s;
 }
-.btn:hover { background: #7e8ed6; transform: translateY(-2px); }
+.btn:hover { background: #8f8f8f; transform: translateY(-2px); }
 .btn:active { transform: translateY(1px); border-color: #2b2b2b #bdbdbd #bdbdbd #2b2b2b; }
 .btn.go { background: #3d8c2a; border-color: #8fe06f #14400a #14400a #8fe06f; }
 .btn.go:hover { background: #4fb336; }
-.btn.pink { background: #b02a98; border-color: #ff9be8 #4a0a40 #4a0a40 #ff9be8; }
-.btn.pink:hover { background: #d63ebb; }
+.btn.pink { background: #b8244f; border-color: #ff9bb8 #4a0a1c #4a0a1c #ff9bb8; }
+.btn.pink:hover { background: #d63a68; }
 .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
 
 /* ============ HERO ============ */
@@ -218,7 +219,7 @@ p { margin: 0 0 1em; }
 .dc-box { display: flex; align-items: center; gap: 16px; }
 .dc-logo { width: 64px; height: 64px; background: #5865f2; border: 3px solid #000; display: grid; place-items: center; font: 700 1.8rem var(--font-px); color: #fff; flex: none; }
 .online { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: .85rem; }
-.online::before { content: ""; width: 10px; height: 10px; background: var(--lime); box-shadow: 0 0 8px var(--lime); }
+.online::before { content: ""; width: 10px; height: 10px; background: var(--lime); }
 
 .soon { display: inline-block; font: .8rem var(--font-px2); letter-spacing: .12em; padding: 4px 10px; background: #0a2a6e; color: #3df0ff; border: 2px solid #000; }
 .is-soon { opacity: .55; position: relative; }
@@ -306,7 +307,7 @@ p { margin: 0 0 1em; }
 .toast {
   position: fixed; right: 16px; top: 16px; z-index: 9999; display: flex; gap: 12px; align-items: center;
   background: #1a1a1a; border: 3px solid #fff; outline: 3px solid #000; padding: 10px 16px 10px 10px; max-width: 340px;
-  transform: translateX(130%); transition: transform .5s cubic-bezier(.2,.9,.3,1.2);
+  transform: translateX(130%); transition: transform .5s cubic-bezier(.2,.8,.2,1);
 }
 .toast.show { transform: none; }
 .toast .ic { width: 44px; height: 44px; background: var(--grass); border: 3px solid #000; display: grid; place-items: center; font-size: 1.4rem; flex: none; }
@@ -342,3 +343,12 @@ footer { padding-block: 40px 20px; text-align: center; font-family: var(--font-m
   *, *::before, *::after { animation-duration: .001s !important; animation-iteration-count: 1 !important; transition-duration: .001s !important; }
   .cube { animation: none; transform: rotateX(-22deg) rotateY(35deg); }
 }
+
+/* Keyboard focus */
+:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
+.win-btn:focus-visible, .btn:focus-visible { outline-color: #fff; outline-offset: 2px; }
+
+.pix { display: block; }
+.hotbar a .pix { color: #fff; filter: drop-shadow(2px 2px 0 #3f3f3f); }
+.start-menu .pix { flex: none; }
+.soc-grid .em .pix { color: #fff; filter: drop-shadow(3px 3px 0 #3f3f3f); }

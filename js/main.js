@@ -8,27 +8,47 @@
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const getJSON = (u) => fetch(u, { cache: "no-cache" }).then((r) => (r.ok ? r.json() : Promise.reject(r.status)));
 
+
+  /* ---------- Pixel icons (8x8 grids) ---------- */
+  const PIX = {
+    home: ["...##...","..####..",".######.","########",".##..##.",".##..##.",".##..##.",".######."],
+    user: ["..####..",".######.",".######.","..####..","...##...",".######.","########","########"],
+    play: ["##......","####....","######..","########","########","######..","####....","##......"],
+    disk: ["########","#.####.#","#.####.#","#......#","#.####.#","#.####.#","#.####.#","########"],
+    youtube: [".######.","########","##.##.##","##.###.#","##.##.##","########",".######.","........"],
+    instagram: ["########","#......#","#.####.#","#.#..#.#","#.#..#.#","#.####.#","#......#","########"],
+    discord: [".##..##.","########","#.####.#","########","########","##.##.##",".######.","..#..#.."],
+    trophy: ["#######.","#.###.#.","#.###.#.",".#####..","..###...","...#....","..###...",".#####.."],
+    github: ["..####..",".######.","########","########","########",".######.","..#..#..",".##..##."],
+  };
+  const pix = (name, size = 28) => {
+    const g = PIX[name]; if (!g) return "";
+    const r = g.flatMap((row, y) => [...row].map((c, x) => (c === "#" ? `<rect x="${x}" y="${y}" width="1" height="1"/>` : ""))).join("");
+    return `<svg class="pix" width="${size}" height="${size}" viewBox="0 0 8 8" shape-rendering="crispEdges" fill="currentColor" aria-hidden="true">${r}</svg>`;
+  };
+
   /* ---------- Shell: taskbar, xp bar, start menu, toast, footer ---------- */
   const NAV = [
-    ["index.html", "Home", "🏠", "home"],
-    ["about.html", "About", "🧑", "about"],
-    ["content.html", "Videos", "▶️", "content"],
-    ["projects.html", "Projects", "💾", "projects"],
+    ["index.html", "Home", "home", "home"],
+    ["about.html", "About", "user", "about"],
+    ["content.html", "Videos", "play", "content"],
+    ["projects.html", "Projects", "disk", "projects"],
   ];
   document.body.insertAdjacentHTML("beforeend", `
     <footer class="wrap">© <span id="yr"></span> <span class="cfg-name">Ricsi</span> · built block by block · <a href="#" id="konami-hint" style="text-decoration:none">↑↑↓↓←→←→BA</a></footer>
     <div class="xp"><i id="xp"></i></div>
     <nav class="taskbar" aria-label="Main">
       <button class="start-btn" id="start" aria-expanded="false" aria-controls="smenu"><b>◆</b><span>Start</span></button>
-      <div class="hotbar">${NAV.map(([h, l, i, k], n) => `<a href="${h}" data-tip="${l}" aria-label="${l}" class="${k === page ? "on" : ""}"><span class="k">${n + 1}</span>${i}</a>`).join("")}</div>
+      <div class="hotbar">${NAV.map(([h, l, i, k], n) => `<a href="${h}" data-tip="${l}" aria-label="${l}" class="${k === page ? "on" : ""}"><span class="k">${n + 1}</span>${pix(i)}</a>`).join("")}</div>
       <div class="tray"><span id="clock">--:--</span></div>
     </nav>
     <div class="start-menu" id="smenu" role="menu"><div class="side">RicsiOS 2000</div>
-      ${NAV.map(([h, l, i]) => `<a href="${h}" role="menuitem">${i} ${l}</a>`).join("")}
-      <a href="#" data-social="youtube" role="menuitem">📺 YouTube</a>
-      <a href="#" data-social="discord" role="menuitem">💬 Discord</a>
+      ${NAV.map(([h, l, i]) => `<a href="${h}" role="menuitem">${pix(i, 20)} ${l}</a>`).join("")}
+      <a href="#" data-social="youtube" role="menuitem">${pix("youtube", 20)} YouTube</a>
+      <a href="#" data-social="discord" role="menuitem">${pix("discord", 20)} Discord</a>
     </div>
-    <div class="toast" id="toast" role="status" aria-live="polite"><div class="ic">🏆</div><div><b>Achievement Get!</b><span id="toast-t"></span></div></div>`);
+    <div class="toast" id="toast" role="status" aria-live="polite"><div class="ic">${pix("trophy", 26)}</div><div><b>Achievement Get!</b><span id="toast-t"></span></div></div>`);
+  $$("[data-pix]").forEach((e) => (e.innerHTML = pix(e.dataset.pix, 40)));
   $("#yr").textContent = new Date().getFullYear();
 
   const tick = () => { const d = new Date(); $("#clock").textContent = d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }); };
@@ -70,7 +90,7 @@
     const els = $$(".rv");
     if (reduced || !window.gsap || !window.ScrollTrigger) { els.forEach((e) => (e.style.cssText = "opacity:1;transform:none")); return; }
     gsap.registerPlugin(ScrollTrigger);
-    ScrollTrigger.batch(els, { start: "top 90%", once: true, onEnter: (b) => gsap.to(b, { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "back.out(1.4)", stagger: 0.1, overwrite: true }) });
+    ScrollTrigger.batch(els, { start: "top 90%", once: true, onEnter: (b) => gsap.to(b, { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "power3.out", stagger: 0.1, overwrite: true }) });
     $$(".bar > i").forEach((i) => gsap.from(i, { scaleX: 0, duration: 1.1, ease: "power3.out", scrollTrigger: { trigger: i, start: "top 92%", once: true } }));
     $$("[data-count]").forEach((n) => { const to = +n.dataset.count; const o = { v: 0 }; gsap.to(o, { v: to, duration: 1.6, ease: "power2.out", scrollTrigger: { trigger: n, start: "top 92%", once: true }, onUpdate: () => (n.textContent = Math.round(o.v).toLocaleString() + (n.dataset.suffix || "")) }); });
   };
@@ -153,8 +173,8 @@
       const d = await getJSON("data/instagram.json").catch(() => ({}));
       const m = /instagram\.com\/(?:p|reel)\/([\w-]+)/.exec(d.postUrl || "");
       if (m) { ig.innerHTML = `<iframe class="ig-embed" loading="lazy" title="Latest Instagram post" src="https://www.instagram.com/p/${m[1]}/embed"></iframe>`; }
-      else if (cfg.instagram?.comingSoon || !isSet(links.instagram)) ig.innerHTML = `<div class="fallback-card"><div class="px" style="font-size:1.6rem">📸 Instagram</div><div class="soon">COMING SOON</div><p>Behind-the-scenes posts are on the way.</p></div>`;
-      else ig.innerHTML = `<div class="fallback-card"><div class="px" style="font-size:1.4rem">📸 @${esc(cfg.instagram.username)}</div><p>Follow along for behind-the-scenes and daily posts.</p><a class="btn pink" href="${esc(links.instagram)}" target="_blank" rel="noopener">Open Instagram</a></div>`;
+      else if (cfg.instagram?.comingSoon || !isSet(links.instagram)) ig.innerHTML = `<div class="fallback-card"><div class="px" style="font-size:1.6rem">Instagram</div><div class="soon">COMING SOON</div><p>Behind-the-scenes posts are on the way.</p></div>`;
+      else ig.innerHTML = `<div class="fallback-card"><div class="px" style="font-size:1.4rem">@${esc(cfg.instagram.username)}</div><p>Follow along for behind-the-scenes and daily posts.</p><a class="btn pink" href="${esc(links.instagram)}" target="_blank" rel="noopener">Open Instagram</a></div>`;
     }
 
     // home: discord
@@ -179,7 +199,7 @@
     const sg = $("#stream-grid");
     if (sg) {
       sg.innerHTML = lastStream
-        ? `<article class="win dark rv"><div class="win-bar alt"><span class="win-title">🔴 Latest stream</span></div><div class="win-body"><a class="card-thumb" href="https://www.youtube.com/watch?v=${lastStream.id}" target="_blank" rel="noopener" style="background-image:url(${ytThumb(lastStream.id)})" aria-label="${esc(lastStream.title)}"></a><div class="vid-title" style="color:#fff">${esc(lastStream.title)}</div><div class="vid-meta" style="color:#9aa4b8">${fmtDate(lastStream.published)}</div></div></article>`
+        ? `<article class="win dark rv"><div class="win-bar alt"><span class="win-title">Latest stream</span></div><div class="win-body"><a class="card-thumb" href="https://www.youtube.com/watch?v=${lastStream.id}" target="_blank" rel="noopener" style="background-image:url(${ytThumb(lastStream.id)})" aria-label="${esc(lastStream.title)}"></a><div class="vid-title" style="color:#fff">${esc(lastStream.title)}</div><div class="vid-meta" style="color:#9aa4b8">${fmtDate(lastStream.published)}</div></div></article>`
         : `<div class="win rv"><div class="win-bar alt"><span class="win-title">No streams yet</span></div><div class="win-body"><p>No streams yet. Check back soon.</p></div></div>`;
     }
 
