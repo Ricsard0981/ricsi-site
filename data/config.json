@@ -1,0 +1,11 @@
+{
+  "name": "Ricsi",
+  "tagline": ["YouTuber.", "Programmer.", "Builder of blocky things.", "Making it look easy."],
+  "youtube": { "handle": "YOUR_HANDLE", "channelId": "YOUR_CHANNEL_ID", "url": "https://www.youtube.com/@YOUR_HANDLE" },
+  "instagram": { "username": "YOUR_INSTAGRAM", "url": "https://www.instagram.com/YOUR_INSTAGRAM/" },
+  "discord": { "invite": "https://discord.gg/YOUR_INVITE", "guildId": "" },
+  "github": { "username": "YOUR_GITHUB", "url": "https://github.com/YOUR_GITHUB" },
+  "tiktok": { "url": "" },
+  "twitter": { "url": "" },
+  "email": ""
+}

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ricsi — YouTuber & Programmer</title>
+<meta name="description" content="Ricsi's home on the internet: latest YouTube videos, Instagram, Discord and projects.">
+<meta property="og:title" content="Ricsi — YouTuber & Programmer">
+<meta property="og:description" content="All my socials, latest content and projects in one place.">
+<meta name="theme-color" content="#07090f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Crect width='8' height='8' fill='%235fb546'/%3E%3Crect y='3' width='8' height='5' fill='%237a5133'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&family=Pixelify+Sans:wght@400;700&family=Silkscreen&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+<header class="wrap hero">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow">▶ Player 1 ready</span>
+      <h1><span class="holo-text">Hey, I'm</span><br><span class="cfg-name">Ricsi</span></h1>
+      <div class="tag" id="tagline" aria-live="off"></div>
+      <p class="lead">I make videos and I write code. This is my corner of the web with everything I do, in one place.</p>
+      <div class="btn-row">
+        <a class="btn go" href="content.html">▶ Watch</a>
+        <a class="btn" href="about.html">About me</a>
+        <a class="btn pink" href="#" data-social="discord">Join Discord</a>
+      </div>
+    </div>
+    <div class="cube-stage" aria-hidden="true">
+      <div class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="cube-shadow"></div>
+    </div>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true"><div class="ticker-track">
+  <span>★ NEW VIDEOS ★</span><span>✦ CODE + CONTENT ✦</span><span>■ JOIN THE DISCORD ■</span><span>★ SMASH SUBSCRIBE ★</span><span>✦ BUILT WITH PIXELS ✦</span><span>■ ONLINE SINCE 2000* ■</span>
+  <span>★ NEW VIDEOS ★</span><span>✦ CODE + CONTENT ✦</span><span>■ JOIN THE DISCORD ■</span><span>★ SMASH SUBSCRIBE ★</span><span>✦ BUILT WITH PIXELS ✦</span><span>■ ONLINE SINCE 2000* ■</span>
+</div></div>
+
+<main class="wrap">
+  <section>
+    <span class="eyebrow rv">Latest drops</span>
+    <h2 class="rv">Fresh <span class="holo-text">content</span></h2>
+    <div class="latest">
+      <article class="win yt rv" data-drag>
+        <div class="win-bar"><span class="win-title">📺 Latest YouTube video</span><span class="win-btns"><button class="win-btn" aria-label="Minimize">_</button><button class="win-btn" aria-label="Close">x</button></span></div>
+        <div class="win-body" id="yt-slot"><div class="skeleton"></div></div>
+      </article>
+      <article class="win ig rv" data-drag>
+        <div class="win-bar alt"><span class="win-title">📸 Latest Instagram</span><span class="win-btns"><button class="win-btn" aria-label="Minimize">_</button><button class="win-btn" aria-label="Close">x</button></span></div>
+        <div class="win-body" id="ig-slot"><div class="skeleton"></div></div>
+      </article>
+      <article class="win dc rv" data-drag>
+        <div class="win-bar grass"><span class="win-title">💬 Discord</span><span class="win-btns"><button class="win-btn" aria-label="Minimize">_</button><button class="win-btn" aria-label="Close">x</button></span></div>
+        <div class="win-body" id="dc-slot"><div class="skeleton"></div></div>
+      </article>
+      <article class="win dark soc rv" data-drag>
+        <div class="win-bar"><span class="win-title">🌐 Find me everywhere</span><span class="win-btns"><button class="win-btn" aria-label="Minimize">_</button><button class="win-btn" aria-label="Close">x</button></span></div>
+        <div class="win-body"><div class="soc-grid">
+          <a class="slot" href="#" data-social="youtube"><span class="em">📺</span><span class="px">YouTube</span></a>
+          <a class="slot" href="#" data-social="instagram"><span class="em">📸</span><span class="px">Instagram</span></a>
+          <a class="slot" href="#" data-social="discord"><span class="em">💬</span><span class="px">Discord</span></a>
+          <a class="slot" href="#" data-social="github"><span class="em">💻</span><span class="px">GitHub</span></a>
+          <a class="slot" href="#" data-social="tiktok"><span class="em">🎵</span><span class="px">TikTok</span></a>
+          <a class="slot" href="#" data-social="twitter"><span class="em">🐦</span><span class="px">X / Twitter</span></a>
+        </div></div>
+      </article>
+    </div>
+  </section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

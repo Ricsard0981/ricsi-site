@@ -1,0 +1,5 @@
+[
+  { "title": "Project One", "desc": "Short description of something you built.", "tags": ["JavaScript", "Web"], "url": "#" },
+  { "title": "Project Two", "desc": "Another cool thing. Replace me in data/projects.json.", "tags": ["Python"], "url": "#" },
+  { "title": "Minecraft Plugin", "desc": "A server plugin or mod, if you have one.", "tags": ["Java", "Minecraft"], "url": "#" }
+]
