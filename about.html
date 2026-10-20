@@ -1,130 +1,107 @@
-<!-- avoid-ai-design-ignore-file: K7, M6, SD5 (focus + reduced-motion live in css/style.css; hero name is one gradient heading) -->
 <!doctype html>
+<!-- avoid-ai-design-ignore-file: K7 (focus styles live in css/style.css) -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About — Ricsi</title>
-<meta name="description" content="Who I am, what I build, my setup and my story.">
-<meta name="theme-color" content="#0b4447">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Crect width='8' height='8' fill='%235fb546'/%3E%3Crect y='3' width='8' height='5' fill='%237a5133'/%3E%3C/svg%3E">
+<meta name="description" content="Ricsi's story: YouTube, editing, code, music and the setup behind it.">
+<meta name="theme-color" content="#E9EEF3">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' shape-rendering='crispEdges'%3E%3Crect width='8' height='8' fill='%237a5133'/%3E%3Crect width='8' height='3' fill='%236DBE2E'/%3E%3Crect y='3' width='2' height='1' fill='%236DBE2E'/%3E%3Crect x='5' y='3' width='1' height='1' fill='%236DBE2E'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;700&family=Pixelify+Sans:wght@400;700&family=Silkscreen&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Silkscreen&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add("js")</script>
 </head>
 <body data-page="about">
-<header class="wrap page-head">
-  <span class="eyebrow">/about.exe</span>
-  <h1 class="holo-text">About me</h1>
-  <p class="muted" style="max-width:60ch">Independent creator from Hungary. Videos, code, games and music.</p>
-</header>
+<main>
+  <header class="wrap hero" data-clip="Hello" data-flavor="blueberry">
+    <h1 class="h-page in" style="--i:0">About me</h1>
+  </header>
 
-<main class="wrap">
-  <section>
-    <div class="about-row">
-      <div class="portrait rv" role="img" aria-label="Portrait placeholder">R</div>
-      <article class="win rv" data-drag>
-        <div class="win-bar"><span class="win-title">My story</span><span class="win-btns"><button class="win-btn" aria-label="Minimize">_</button><button class="win-btn" aria-label="Close">x</button></span></div>
-        <div class="win-body">
-          <h2>Hey, I'm <span class="cfg-name">Ricsi</span>.</h2>
-          <p>I'm an independent creator from Hungary who loves building things across different creative fields. From videos and music to software, games and Minecraft projects, I enjoy turning ideas into real experiences.</p>
-          <p>My YouTube journey goes back further than my current channel. After my original channel was hacked and banned in 2022, I started over from scratch. That restart became the beginning of a new chapter under <b>Clivix</b>.</p>
-          <p>I don't want to limit myself to one medium. I want to keep learning, build ambitious projects and develop a creative identity that connects everything I make. This website is my archive of that journey.</p>
-        </div>
-      </article>
-    </div>
-
-    <div class="about-row flip">
-      <div class="portrait rv" style="background:linear-gradient(135deg,#5fb546,#3df0ff)" role="img" aria-label="YouTube">YT</div>
-      <article class="win rv" data-drag>
-        <div class="win-bar alt"><span class="win-title">Clivix — YouTube</span><span class="win-btns"><button class="win-btn" aria-label="Minimize">_</button><button class="win-btn" aria-label="Close">x</button></span></div>
-        <div class="win-body">
-          <h3>Clivix</h3>
-          <p>Clivix is my Hungarian Minecraft channel, where I experiment with content, storytelling and editing. I want videos that feel engaging, intentional and memorable, combining gameplay with pacing, sound design, motion graphics and a distinctive visual style.</p>
-          <p>I'm working toward a new creative direction focused on long-form videos. There's no fixed upload schedule yet, because I'm learning to balance the vision in my head with a sustainable creative process, so I can keep making work I'm genuinely proud of.</p>
-          <div class="stats" style="margin-top:16px">
-            <div class="slot stat"><b data-count="920">0</b><span>Subscribers</span></div>
-            <div class="slot stat"><b data-count="2">0</b><span>Public videos</span></div>
-            <div class="slot stat"><b>2022</b><span>Creating since</span></div>
-          </div>
-          <div class="btn-row" style="margin-top:16px"><a class="btn pink" href="#" data-social="youtube">Visit my channel</a></div>
-        </div>
-      </article>
-    </div>
-
-    <div class="about-row">
-      <article class="win dark rv" data-drag>
-        <div class="win-bar grass"><span class="win-title">What I do</span><span class="win-btns"><button class="win-btn" aria-label="Minimize">_</button><button class="win-btn" aria-label="Close">x</button></span></div>
-        <div class="win-body">
-          <h3>Skill inventory</h3>
-          <div class="skill-grid">
-            <div class="slot"><span class="px">Video editing</span></div>
-            <div class="slot"><span class="px">Music</span></div>
-            <div class="slot"><span class="px">HTML / CSS</span></div>
-            <div class="slot"><span class="px">Python</span></div>
-            <div class="slot"><span class="px">C#</span></div>
-            <div class="slot"><span class="px">Godot</span></div>
-            <div class="slot"><span class="px">Minecraft mods</span></div>
-            <div class="slot"><span class="px">JavaScript</span></div>
-          </div>
-          <p style="margin-top:16px">I started with HTML and CSS, explored Python, and I'm now studying C#. I also experiment with game development, Minecraft mods and plugins, and make music as <b>rix.off.</b></p>
-          <p>Editing is a big part of how I express myself: fast-paced storytelling, carefully timed cuts, motion graphics and sound design that make a video feel alive.</p>
-        </div>
-      </article>
-      <div class="portrait rv" style="background:linear-gradient(135deg,#ff4fd8,#8dff4f)" role="img" aria-label="Code">&lt;/&gt;</div>
-    </div>
-
-    <div class="about-row flip">
-      <div class="portrait rv" style="background:linear-gradient(135deg,#3df0ff,#ffd84f)" role="img" aria-label="Timeline">★</div>
-      <article class="win chrome rv" data-drag>
-        <div class="win-bar"><span class="win-title">Timeline</span><span class="win-btns"><button class="win-btn" aria-label="Minimize">_</button><button class="win-btn" aria-label="Close">x</button></span></div>
-        <div class="win-body">
-          <ol class="timeline">
-            <li><span class="yr">2022</span><p>Started making YouTube videos. After my first channel was hacked and banned, I rebuilt from scratch as Clivix (Sept 2022).</p></li>
-            <li><span class="yr">SCHOOL</span><p>Got into software development and testing: HTML and CSS first, then Python.</p></li>
-            <li><span class="yr">AUG 2026</span><p>A Short passed 30,000 views.</p></li>
-            <li><span class="yr">SEP 2026</span><p>Started my second year, studying C#.</p></li>
-            <li><span class="yr">NOW</span><p>Building ambitious projects and working toward long-form videos.</p></li>
-          </ol>
-        </div>
-      </article>
-    </div>
-
-    <div class="about-row">
-      <article class="win alt rv" data-drag>
-        <div class="win-bar alt"><span class="win-title">Setup &amp; gear</span><span class="win-btns"><button class="win-btn" aria-label="Minimize">_</button><button class="win-btn" aria-label="Close">x</button></span></div>
-        <div class="win-body">
-          <h3>My setup</h3>
-          <ul style="margin:0 0 12px;padding-left:20px;color:#1b2233">
-            <li>CPU: Intel Core i5-11400F</li>
-            <li>GPU: AMD Radeon RX 6600 XT, 8 GB</li>
-            <li>RAM: 40 GB DDR4</li>
-            <li>Monitor: Xiaomi Mi 2K, 27", 1440p, 165 Hz</li>
-            <li>Webcam: Logitech C920 Pro HD</li>
-            <li>Mic: budget mic, mixed well</li>
-          </ul>
-          <div class="tags"><span class="tag-chip">Premiere Pro</span><span class="tag-chip">OBS Studio</span><span class="tag-chip">FL Studio</span><span class="tag-chip">Serum 2</span><span class="tag-chip">Godot</span><span class="tag-chip">VS Code</span></div>
-        </div>
-      </article>
-      <article class="win dark rv" data-drag>
-        <div class="win-bar"><span class="win-title">Fun facts</span><span class="win-btns"><button class="win-btn" aria-label="Minimize">_</button><button class="win-btn" aria-label="Close">x</button></span></div>
-        <div class="win-body"><ul style="margin:0;padding-left:20px">
-          <li>Favourite Minecraft biome: Plains. Simple, and I like it.</li>
-          <li>I'd rather finish a video properly than upload something that feels unfinished.</li>
-          <li>I make hyperpop and electronic music as rix.off.</li>
-          <li>I work across editing, coding, game dev, Minecraft and music.</li>
-        </ul></div>
-      </article>
+  <section class="section" data-clip="Story" data-flavor="blueberry">
+    <div class="wrap split">
+      <div class="prose">
+        <h2 class="h-sec rv">Hey, I'm Ricsi.</h2>
+        <p class="big">I'm an independent creator from Hungary who loves building things across different creative fields. From videos and music to software, games and Minecraft projects, I like turning ideas into real things people can watch, hear or play.</p>
+        <p>My YouTube journey goes back further than my current channel. After my original channel was hacked and banned in 2022, I started over from scratch. That restart became a new chapter, and I've kept experimenting with content, editing and storytelling ever since.</p>
+        <p>I don't want to limit myself to one medium. I want to keep learning, build ambitious projects and grow a creative identity that connects everything I make. This site is my archive of that.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Based in</dt><dd>Hungary</dd></div>
+        <div><dt>Making videos since</dt><dd>2022</dd></div>
+        <div><dt>Subscribers</dt><dd>920</dd></div>
+        <div><dt>Studying</dt><dd>C#, second year</dd></div>
+        <div><dt>Music alias</dt><dd>rix.off.</dd></div>
+        <div><dt>Favourite biome</dt><dd>Plains</dd></div>
+      </dl>
     </div>
   </section>
 
-  <section style="text-align:center">
-    <h2 class="rv holo-text">Let's connect</h2>
-    <div class="btn-row rv" style="justify-content:center"><a class="btn go" href="#" data-social="youtube">YouTube</a><a class="btn pink" href="#" data-social="discord">Discord</a><a class="btn" href="#" data-social="github">GitHub</a></div>
+  <section class="section" data-clip="YouTube" data-flavor="strawberry">
+    <div class="wrap split flip">
+      <div class="prose">
+        <h2 class="h-sec rv">The channel</h2>
+        <p class="big">My channel is Hungarian Minecraft content where I experiment with storytelling and editing: gameplay with real pacing, sound design and motion graphics.</p>
+        <p>I'm working toward long-form videos. There's no fixed upload schedule yet, because I'd rather finish a video properly than upload something that feels unfinished.</p>
+        <div class="btn-row"><a class="btn straw" href="#" data-social="youtube">Visit the channel</a></div>
+      </div>
+      <p class="quote">I'm learning to balance the vision in my head with a process I can sustain, so I keep making work I'm proud of.</p>
+    </div>
+  </section>
+
+  <section class="section" data-clip="Skills" data-flavor="tangerine">
+    <div class="wrap split">
+      <div class="prose">
+        <h2 class="h-sec rv">What I work with</h2>
+        <p class="big">Editing is how I express myself: fast storytelling, carefully timed cuts, motion graphics and sound design that make a video feel alive.</p>
+        <p>On the code side I started with HTML and CSS at school, moved on to Python, and I'm now in my second year of C#. I also build games in Godot, make Minecraft mods and plugins, and produce hyperpop as rix.off.</p>
+      </div>
+      <div class="fields">
+        <div class="field"><b>Video</b><div class="chips"><span class="chip">Premiere Pro</span><span class="chip">OBS Studio</span><span class="chip">Motion graphics</span><span class="chip">Sound design</span></div></div>
+        <div class="field tang"><b>Code</b><div class="chips"><span class="chip">HTML / CSS</span><span class="chip">JavaScript</span><span class="chip">Python</span><span class="chip">C#</span></div></div>
+        <div class="field lime"><b>Games</b><div class="chips"><span class="chip">Godot</span><span class="chip">Minecraft mods</span><span class="chip">Plugins</span></div></div>
+        <div class="field straw"><b>Music</b><div class="chips"><span class="chip">FL Studio</span><span class="chip">Serum 2</span><span class="chip">Auto-Tune</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-clip="Timeline" data-flavor="lime">
+    <div class="wrap split flip">
+      <ol class="tl">
+        <li><span class="yr">2022</span><p>My first channel gets hacked and banned. I start again from zero in September.</p></li>
+        <li><span class="yr">School</span><p>Get into software development and testing. HTML and CSS first, then Python.</p></li>
+        <li><span class="yr">Aug 2026</span><p>A Short passes 30,000 views.</p></li>
+        <li><span class="yr">Sep 2026</span><p>Second year of studying C#.</p></li>
+        <li><span class="yr">Now</span><p>Building bigger projects and working toward long-form videos.</p></li>
+      </ol>
+      <div class="prose">
+        <h2 class="h-sec rv">So far</h2>
+        <p>A few moments that shaped where I am. The list is short on purpose; the next entries are the ones I'm working on.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-clip="Setup" data-flavor="blueberry">
+    <div class="wrap split">
+      <div class="prose">
+        <h2 class="h-sec rv">My setup</h2>
+        <p>Nothing exotic. A solid mid-range PC, a webcam I trust and a cheap mic that sounds good once the audio is mixed properly.</p>
+        <div class="chips"><span class="chip">Premiere Pro</span><span class="chip">OBS Studio</span><span class="chip">FL Studio 25</span><span class="chip">Godot</span><span class="chip">VS Code</span></div>
+      </div>
+      <div class="lcd" role="table" aria-label="PC and gear">
+        <div role="row"><span role="cell">CPU</span><span role="cell">Intel Core i5-11400F</span></div>
+        <div role="row"><span role="cell">GPU</span><span role="cell">Radeon RX 6600 XT 8GB</span></div>
+        <div role="row"><span role="cell">RAM</span><span role="cell">40 GB DDR4</span></div>
+        <div role="row"><span role="cell">Board</span><span role="cell">ASRock B560M-HDV</span></div>
+        <div role="row"><span role="cell">Display</span><span role="cell">Xiaomi 27" 1440p 165Hz</span></div>
+        <div role="row"><span role="cell">PSU</span><span role="cell">Corsair RM650e</span></div>
+        <div role="row"><span role="cell">Webcam</span><span role="cell">Logitech C920 Pro HD</span></div>
+        <div role="row"><span role="cell">Mic</span><span role="cell">Budget, well mixed</span></div>
+      </div>
+    </div>
   </section>
 </main>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="js/main.js"></script>
 </body>

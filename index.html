@@ -1,76 +1,60 @@
-<!-- avoid-ai-design-ignore-file: K7, M6, SD5 (focus + reduced-motion live in css/style.css; hero name is one gradient heading) -->
 <!doctype html>
+<!-- avoid-ai-design-ignore-file: K7 (focus styles live in css/style.css) -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ricsi — Creator & Developer</title>
-<meta name="description" content="Ricsi's home on the internet: latest YouTube videos, Instagram, Discord and projects.">
-<meta property="og:title" content="Ricsi — YouTuber & Programmer">
-<meta property="og:description" content="All my socials, latest content and projects in one place.">
-<meta name="theme-color" content="#0b4447">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Crect width='8' height='8' fill='%235fb546'/%3E%3Crect y='3' width='8' height='5' fill='%237a5133'/%3E%3C/svg%3E">
+<title>Ricsi — videos, code and music</title>
+<meta name="description" content="Ricsi: video editor, developer and music producer from Hungary. Latest uploads, channels and projects.">
+<meta property="og:title" content="Ricsi — videos, code and music">
+<meta property="og:description" content="Video editor, developer and music producer from Hungary.">
+<meta name="theme-color" content="#E9EEF3">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' shape-rendering='crispEdges'%3E%3Crect width='8' height='8' fill='%237a5133'/%3E%3Crect width='8' height='3' fill='%236DBE2E'/%3E%3Crect y='3' width='2' height='1' fill='%236DBE2E'/%3E%3Crect x='5' y='3' width='1' height='1' fill='%236DBE2E'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;700&family=Pixelify+Sans:wght@400;700&family=Silkscreen&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Silkscreen&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add("js")</script>
 </head>
 <body data-page="home">
-<header class="wrap hero">
-  <div class="hero-grid">
-    <div>
-      <span class="eyebrow">Player 1 ready</span>
-      <h1 class="holo-text">Hey, I'm<br><span class="cfg-name">Ricsi</span></h1>
-      <div class="tag" id="tagline" aria-live="off"></div>
-      <p class="lead">I make videos and I write code. This is my corner of the web with everything I do, in one place.</p>
-      <div class="btn-row">
-        <a class="btn go" href="content.html">Watch videos</a>
-        <a class="btn" href="about.html">About me</a>
-        <a class="btn pink" href="#" data-social="discord">Join Discord</a>
+<main>
+  <header class="wrap hero" data-clip="Intro" data-flavor="blueberry">
+    <p class="hero-roles in" style="--i:0"><b id="role">Video Editor</b> from Hungary</p>
+    <h1 class="hero-name in" style="--i:1">Ricsi</h1>
+    <div class="hero-grid">
+      <div>
+        <p class="lede in" style="--i:2">I make Minecraft videos, write code and produce music as rix.off. This is where all of it lives.</p>
+        <div class="btn-row in" style="--i:3">
+          <a class="btn" href="#" data-social="youtube">Watch on YouTube</a>
+          <a class="btn ghost" href="about.html">Read about me</a>
+        </div>
       </div>
+      <figure class="player in" style="--i:2;margin:0" aria-label="Latest upload">
+        <div class="screen" id="screen"></div>
+        <div class="transport">
+          <button class="play" id="play" aria-label="Play latest video"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></button>
+          <div><div class="np-label">Latest upload</div><div class="np-title" id="np-title">Loading…</div></div>
+        </div>
+      </figure>
     </div>
-    <div class="cube-stage" aria-hidden="true">
-      <div class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-      <div class="cube-shadow"></div>
+  </header>
+
+  <section class="section" data-clip="Channels" data-flavor="strawberry">
+    <div class="wrap">
+      <h2 class="h-sec rv">Where to find me</h2>
+      <div class="rows" id="rows"></div>
     </div>
-  </div>
-</header>
+  </section>
 
-<div class="ticker" aria-hidden="true"><div class="ticker-track">
-  <span>■ NEW VIDEOS ■</span><span>◆ CODE + CONTENT ◆</span><span>■ JOIN THE DISCORD ■</span><span>■ SMASH SUBSCRIBE ■</span><span>◆ BUILT WITH PIXELS ◆</span><span>■ ONLINE SINCE 2000* ■</span>
-  <span>■ NEW VIDEOS ■</span><span>◆ CODE + CONTENT ◆</span><span>■ JOIN THE DISCORD ■</span><span>■ SMASH SUBSCRIBE ■</span><span>◆ BUILT WITH PIXELS ◆</span><span>■ ONLINE SINCE 2000* ■</span>
-</div></div>
-
-<main class="wrap">
-  <section>
-    <span class="eyebrow rv">Latest drops</span>
-    <h2 class="rv holo-text">Fresh content</h2>
-    <div class="latest">
-      <article class="win yt rv" data-drag>
-        <div class="win-bar"><span class="win-title">Latest YouTube video</span><span class="win-btns"><button class="win-btn" aria-label="Minimize">_</button><button class="win-btn" aria-label="Close">x</button></span></div>
-        <div class="win-body" id="yt-slot"><div class="skeleton"></div></div>
-      </article>
-      <article class="win ig rv" data-drag>
-        <div class="win-bar alt"><span class="win-title">Latest Instagram</span><span class="win-btns"><button class="win-btn" aria-label="Minimize">_</button><button class="win-btn" aria-label="Close">x</button></span></div>
-        <div class="win-body" id="ig-slot"><div class="skeleton"></div></div>
-      </article>
-      <article class="win dc rv" data-drag>
-        <div class="win-bar grass"><span class="win-title">Discord</span><span class="win-btns"><button class="win-btn" aria-label="Minimize">_</button><button class="win-btn" aria-label="Close">x</button></span></div>
-        <div class="win-body" id="dc-slot"><div class="skeleton"></div></div>
-      </article>
-      <article class="win dark soc rv" data-drag>
-        <div class="win-bar"><span class="win-title">Find me everywhere</span><span class="win-btns"><button class="win-btn" aria-label="Minimize">_</button><button class="win-btn" aria-label="Close">x</button></span></div>
-        <div class="win-body"><div class="soc-grid">
-          <a class="slot" href="#" data-social="youtube"><span class="em" data-pix="youtube"></span><span class="px">YouTube</span></a>
-          <a class="slot" href="#" data-social="instagram"><span class="em" data-pix="instagram"></span><span class="px">Instagram</span></a>
-          <a class="slot" href="#" data-social="discord"><span class="em" data-pix="discord"></span><span class="px">Discord</span></a>
-          <a class="slot" href="#" data-social="github"><span class="em" data-pix="github"></span><span class="px">GitHub</span></a>
-        </div></div>
-      </article>
+  <section class="section" data-clip="Uploads" data-flavor="tangerine">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <h2 class="h-sec">Recent uploads</h2>
+        <a class="btn ghost" href="content.html">All videos and streams</a>
+      </div>
+      <div class="thumbs" id="recent"></div>
     </div>
   </section>
 </main>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="js/main.js"></script>
 </body>
